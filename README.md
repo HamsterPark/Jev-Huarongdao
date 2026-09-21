@@ -1,5 +1,7 @@
 # Jev 玩华容道
 
+想直接和 Jev 玩华容道赛跑？[下载 Windows 便携版 EXE](https://github.com/HamsterPark/Jev-Xiangqi/releases/download/v1.1.0/Jev-Games-1.1.0-x64-portable.exe)，双击打开，输入自己的 [Jev API key](https://www.jevai.org/jev-api) 即可开始；程序内可切换中文与英文。无需安装 Node.js 或部署服务，对弈时需要联网。
+
 经典 4×5「横刀立马」华容道的通关回放。网页从仓库里的 `trace/jev-solved.json` 读取完整棋谱，先核对每一步是否合法、曹操是否到达底部出口，再开放播放、暂停、单步、重开和调速。访客打开页面时不会调用 Jev API。
 
 ## 双棋盘竞速模块
