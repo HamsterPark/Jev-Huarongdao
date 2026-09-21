@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test",
-    "check": "node --check app.js && node --check assets/js/huarongdao-core.js"
+    "check": "node --check app.js && node --check assets/js/huarongdao-core.js && node --check assets/js/huarongdao-distances.js && node --check assets/js/huarongdao-race.js"
   },
   "engines": { "node": ">=20" }
 }
