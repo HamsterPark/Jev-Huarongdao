@@ -1,11 +1,14 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   applyMove,
   createInitialState,
   getLegalMoves,
   getStateKey,
   isSolved,
+  TRACE_FORMAT,
+  validateSolvedTrace,
   validatePositions,
 } from "../assets/js/huarongdao-core.js";
 
@@ -72,4 +75,52 @@ test("invalid boards are rejected and keys are canonical", () => {
     Object.entries(opening.positions).reverse(),
   );
   assert.equal(getStateKey(opening), getStateKey(reversed));
+});
+
+test("a replay rejects empty, illegal, and unfinished traces", () => {
+  assert.throws(
+    () => validateSolvedTrace({ format: TRACE_FORMAT, moves: [] }),
+    /没有走法/,
+  );
+  assert.throws(
+    () =>
+      validateSolvedTrace({ format: TRACE_FORMAT, moves: [{ move: "C:D" }] }),
+    /第 1 步非法/,
+  );
+  assert.throws(
+    () =>
+      validateSolvedTrace({ format: TRACE_FORMAT, moves: [{ move: "S1:D" }] }),
+    /未到达出口/,
+  );
+});
+
+test("the published trace is complete and its step sources match the metadata", () => {
+  const trace = JSON.parse(
+    readFileSync(new URL("../trace/jev-solved.json", import.meta.url), "utf8"),
+  );
+  const states = validateSolvedTrace(trace);
+  assert.equal(states.length, trace.moves.length + 1);
+  assert.equal(isSolved(states.at(-1)), true);
+  for (const entry of trace.moves) {
+    assert.ok(entry.candidates.includes(entry.move));
+    if (entry.source === "forced") assert.equal(entry.candidateCount, 1);
+    else assert.ok(entry.candidateCount > 1);
+  }
+  assert.equal(
+    trace.metadata.jevChoices,
+    trace.moves.filter((entry) => entry.source === "jev").length,
+  );
+  assert.equal(
+    trace.metadata.forcedMoves,
+    trace.moves.filter((entry) => entry.source === "forced").length,
+  );
+  assert.equal(
+    trace.metadata.guidedMoves,
+    trace.moves.filter((entry) => entry.source === "guided").length,
+  );
+  assert.ok(
+    trace.moves
+      .slice(trace.metadata.fallback.afterStep)
+      .every((entry) => entry.source !== "jev"),
+  );
 });

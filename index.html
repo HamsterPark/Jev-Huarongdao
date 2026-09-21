@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0d1825" />
-    <meta name="jev-api-endpoint" content="" />
     <title>Jev 玩华容道</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
@@ -25,10 +24,10 @@
           <p class="eyebrow">
             <span class="eyebrow-line"></span> JEV VERSUS THE PUZZLE
           </p>
-          <h1>看 Jev 挑战<span>华容道。</span></h1>
+          <h1>回放这局<span>华容道。</span></h1>
           <p class="intro-copy">
-            经典“横刀立马”开局。每一步，Jev
-            从可行的走法中做选择。看它能否移动棋子，让曹操走到棋盘下方的出口。
+            经典“横刀立马”开局。棋谱保留了 Jev
+            的选择与路径引导的走法。跟着每一步，看曹操如何走到棋盘下方的出口。
           </p>
         </div>
 
@@ -36,7 +35,7 @@
           <section class="board-panel" aria-label="华容道棋盘">
             <div class="panel-topline">
               <span class="panel-kicker">横刀立马 <span>·</span> 四列五行</span>
-              <span id="gameBadge" class="game-badge">等待连接</span>
+              <span id="gameBadge" class="game-badge">载入棋谱</span>
             </div>
             <div class="board-stage">
               <div class="board-frame">
@@ -61,11 +60,11 @@
           <aside class="control-panel">
             <section class="status-card" aria-live="polite">
               <div class="section-heading">
-                <span>01 / 实时状态</span><span class="tiny-star">✳</span>
+                <span>01 / 回放状态</span><span class="tiny-star">✳</span>
               </div>
-              <div id="statusTitle" class="status-title">等待 Jev 连接</div>
+              <div id="statusTitle" class="status-title">载入通关棋谱</div>
               <p id="statusDetail" class="status-detail">
-                填写 Jev 服务地址，然后开始演示。
+                棋谱中的每一步都会先经过规则校验。
               </p>
               <div class="stats-row">
                 <div>
@@ -91,7 +90,7 @@
                   class="button button-primary"
                   type="button"
                 >
-                  ▶ 开始演示
+                  ▶ 播放棋谱
                 </button>
                 <button
                   id="pauseBtn"
@@ -108,14 +107,14 @@
                   class="button button-outline"
                   type="button"
                 >
-                  走一步
+                  下一步
                 </button>
                 <button
                   id="restartBtn"
                   class="button button-outline"
                   type="button"
                 >
-                  重新开局
+                  从头播放
                 </button>
               </div>
               <label class="field-label" for="speed">演示速度</label>
@@ -128,28 +127,23 @@
             </section>
 
             <section class="connection-card">
-              <div class="section-heading"><span>03 / Jev 服务</span></div>
-              <label class="field-label" for="endpoint">服务地址</label>
-              <div class="endpoint-row">
-                <input
-                  id="endpoint"
-                  type="url"
-                  inputmode="url"
-                  placeholder="https://example.com/api/move"
-                  autocomplete="url"
-                  spellcheck="false"
-                />
-                <button
-                  id="saveEndpointBtn"
-                  type="button"
-                  aria-label="保存服务地址"
-                >
-                  保存
-                </button>
-              </div>
-              <p class="field-help">
-                此页面通过服务地址获取 Jev 的下一步选择。
+              <div class="section-heading"><span>03 / 关于这局棋</span></div>
+              <div id="traceTitle" class="record-title">完整通关记录</div>
+              <p id="traceDescription" class="record-description">
+                正在校验棋谱。回放会逐步展示记录的走法，无需连接服务。
               </p>
+              <div class="record-facts">
+                <span>记录步数</span><strong id="traceCount">—</strong>
+              </div>
+              <div class="record-facts">
+                <span>Jev 自选</span><strong id="jevCount">—</strong>
+              </div>
+              <div class="record-facts">
+                <span>唯一最短延续</span><strong id="forcedCount">—</strong>
+              </div>
+              <div class="record-facts">
+                <span>后段路径引导</span><strong id="guidedCount">—</strong>
+              </div>
             </section>
           </aside>
         </div>
@@ -158,12 +152,12 @@
           <div class="log-heading">
             <div>
               <p class="eyebrow">MOVE BY MOVE</p>
-              <h2>Jev 的每一步</h2>
+              <h2>这局棋的每一步</h2>
             </div>
-            <span id="logSummary">等待第一步</span>
+            <span id="logSummary">载入棋谱中</span>
           </div>
           <ol id="moveLog" class="move-log">
-            <li class="empty-log">开局已就绪，等待 Jev 落子。</li>
+            <li class="empty-log">棋谱已就绪后即可开始回放。</li>
           </ol>
         </section>
       </main>

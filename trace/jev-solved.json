@@ -1,0 +1,1132 @@
+{
+  "format": "jev-huarongdao-trace-v1",
+  "title": "Jev 选择与路径引导的华容道通关",
+  "metadata": {
+    "generatedAt": "2026-09-21T08:51:03.375Z",
+    "startedAt": "2026-09-21T08:47:21.434Z",
+    "model": "typesafe/jev-1.13",
+    "guidance": {
+      "kind": "exact-shortest-distance",
+      "description": "前 75 步录制时，离线求解器只向 Jev 提供最短距离递减的候选；其中 28 步由 Jev 在多个候选中选择。Jev API 当日额度用尽后，剩余 41 步按最短路径引导完成。",
+      "initialDistance": 116,
+      "reachableStates": 25955,
+      "goalStates": 964
+    },
+    "jevChoices": 28,
+    "forcedMoves": 78,
+    "guidedMoves": 10,
+    "fallback": {
+      "reason": "Jev API daily request limit reached",
+      "afterStep": 75,
+      "method": "first exact-distance-decreasing move"
+    }
+  },
+  "moves": [
+    {
+      "move": "S3:R",
+      "confidence": 0.01,
+      "probabilities": {
+        "S4:L": 0.49,
+        "S3:R": 0.51
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S3:R",
+        "S4:L"
+      ]
+    },
+    {
+      "move": "V3:D",
+      "confidence": 0.06,
+      "probabilities": {
+        "S4:L": 0.47,
+        "V3:D": 0.53
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V3:D",
+        "S4:L"
+      ]
+    },
+    {
+      "move": "H:L",
+      "confidence": 0,
+      "probabilities": {
+        "S4:L": 0.5,
+        "H:L": 0.5
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "H:L",
+        "S4:L"
+      ]
+    },
+    {
+      "move": "S2:U",
+      "confidence": 0.15,
+      "probabilities": {
+        "S2:U": 0.57,
+        "S4:L": 0.43
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S2:U",
+        "S4:L"
+      ]
+    },
+    {
+      "move": "S4:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:L"
+      ]
+    },
+    {
+      "move": "V4:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V4:D"
+      ]
+    },
+    {
+      "move": "S2:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S2:R"
+      ]
+    },
+    {
+      "move": "H:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "H:R"
+      ]
+    },
+    {
+      "move": "V3:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V3:U"
+      ]
+    },
+    {
+      "move": "S3:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:L"
+      ]
+    },
+    {
+      "move": "S4:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:L"
+      ]
+    },
+    {
+      "move": "V4:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V4:L"
+      ]
+    },
+    {
+      "move": "S2:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S2:D"
+      ]
+    },
+    {
+      "move": "H:R",
+      "confidence": 0.14,
+      "probabilities": {
+        "H:R": 0.57,
+        "S2:D": 0.43
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "H:R",
+        "S2:D"
+      ]
+    },
+    {
+      "move": "S1:U",
+      "confidence": 0.27,
+      "probabilities": {
+        "S1:U": 0.63,
+        "S2:D": 0.37
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S1:U",
+        "S2:D"
+      ]
+    },
+    {
+      "move": "S4:U",
+      "confidence": 0.28,
+      "probabilities": {
+        "S2:D": 0.36,
+        "S4:U": 0.64
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S2:D",
+        "S4:U"
+      ]
+    },
+    {
+      "move": "S3:R",
+      "confidence": 0.2,
+      "probabilities": {
+        "S3:R": 0.6,
+        "S2:D": 0.4
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S2:D",
+        "S3:R"
+      ]
+    },
+    {
+      "move": "V3:D",
+      "confidence": 0.31,
+      "probabilities": {
+        "S2:D": 0.35,
+        "V3:D": 0.65
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V3:D",
+        "S2:D"
+      ]
+    },
+    {
+      "move": "S1:L",
+      "confidence": 0.11,
+      "probabilities": {
+        "S1:L": 0.55,
+        "S2:D": 0.45
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S1:L",
+        "S2:D"
+      ]
+    },
+    {
+      "move": "H:L",
+      "confidence": 0.27,
+      "probabilities": {
+        "H:L": 0.63,
+        "S2:D": 0.37
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "H:L",
+        "S2:D"
+      ]
+    },
+    {
+      "move": "S2:D",
+      "confidence": 0.02,
+      "probabilities": {
+        "S2:D": 0.51,
+        "V2:D": 0.49
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V2:D",
+        "S2:D"
+      ]
+    },
+    {
+      "move": "V2:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V2:D"
+      ]
+    },
+    {
+      "move": "V2:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V2:D"
+      ]
+    },
+    {
+      "move": "C:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "C:R"
+      ]
+    },
+    {
+      "move": "V1:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V1:R"
+      ]
+    },
+    {
+      "move": "S1:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:U"
+      ]
+    },
+    {
+      "move": "V3:U",
+      "confidence": 0.13,
+      "probabilities": {
+        "S1:U": 0.43,
+        "V3:U": 0.57
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V3:U",
+        "S1:U"
+      ]
+    },
+    {
+      "move": "S3:L",
+      "confidence": 0.01,
+      "probabilities": {
+        "S3:L": 0.5,
+        "S1:U": 0.5
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S1:U",
+        "S3:L"
+      ]
+    },
+    {
+      "move": "S1:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:U"
+      ]
+    },
+    {
+      "move": "V3:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V3:U"
+      ]
+    },
+    {
+      "move": "S4:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:L"
+      ]
+    },
+    {
+      "move": "V4:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V4:L"
+      ]
+    },
+    {
+      "move": "S2:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S2:L"
+      ]
+    },
+    {
+      "move": "V2:D",
+      "confidence": 0.05,
+      "probabilities": {
+        "V2:D": 0.53,
+        "S2:U": 0.47
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V2:D",
+        "S2:U"
+      ]
+    },
+    {
+      "move": "H:R",
+      "confidence": 0.01,
+      "probabilities": {
+        "S2:U": 0.49,
+        "H:R": 0.51
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "H:R",
+        "S2:U"
+      ]
+    },
+    {
+      "move": "V4:U",
+      "confidence": 0,
+      "probabilities": {
+        "S2:U": 0.5,
+        "V4:U": 0.5
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V4:U",
+        "S2:U"
+      ]
+    },
+    {
+      "move": "S2:U",
+      "confidence": 0.16,
+      "probabilities": {
+        "S2:U": 0.58,
+        "S3:R": 0.42
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S2:U",
+        "S3:R"
+      ]
+    },
+    {
+      "move": "S3:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:R"
+      ]
+    },
+    {
+      "move": "S3:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:R"
+      ]
+    },
+    {
+      "move": "V4:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V4:D"
+      ]
+    },
+    {
+      "move": "V1:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V1:D"
+      ]
+    },
+    {
+      "move": "S1:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:R"
+      ]
+    },
+    {
+      "move": "V3:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V3:U"
+      ]
+    },
+    {
+      "move": "S4:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:U"
+      ]
+    },
+    {
+      "move": "V4:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V4:L"
+      ]
+    },
+    {
+      "move": "V1:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V1:D"
+      ]
+    },
+    {
+      "move": "V1:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V1:D"
+      ]
+    },
+    {
+      "move": "S4:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:R"
+      ]
+    },
+    {
+      "move": "S4:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:U"
+      ]
+    },
+    {
+      "move": "H:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "H:L"
+      ]
+    },
+    {
+      "move": "V2:U",
+      "confidence": 0.26,
+      "probabilities": {
+        "H:L": 0.37,
+        "V2:U": 0.63
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V2:U",
+        "H:L"
+      ]
+    },
+    {
+      "move": "S3:R",
+      "confidence": 0.06,
+      "probabilities": {
+        "H:L": 0.47,
+        "S3:R": 0.53
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "H:L",
+        "S3:R"
+      ]
+    },
+    {
+      "move": "S2:D",
+      "confidence": 0.24,
+      "probabilities": {
+        "H:L": 0.38,
+        "S2:D": 0.62
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "H:L",
+        "S2:D"
+      ]
+    },
+    {
+      "move": "H:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "H:L"
+      ]
+    },
+    {
+      "move": "V2:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V2:L"
+      ]
+    },
+    {
+      "move": "S3:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:U"
+      ]
+    },
+    {
+      "move": "S2:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S2:R"
+      ]
+    },
+    {
+      "move": "V2:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V2:D"
+      ]
+    },
+    {
+      "move": "H:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "H:R"
+      ]
+    },
+    {
+      "move": "V3:D",
+      "confidence": 0.08,
+      "probabilities": {
+        "H:R": 0.46,
+        "V3:D": 0.54
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V3:D",
+        "H:R"
+      ]
+    },
+    {
+      "move": "H:R",
+      "confidence": 0.09,
+      "probabilities": {
+        "H:R": 0.54,
+        "S1:L": 0.46
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "H:R",
+        "S1:L"
+      ]
+    },
+    {
+      "move": "V1:U",
+      "confidence": 0.39,
+      "probabilities": {
+        "S1:L": 0.31,
+        "V1:U": 0.69
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V1:U",
+        "S1:L"
+      ]
+    },
+    {
+      "move": "S1:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:L"
+      ]
+    },
+    {
+      "move": "S4:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:U"
+      ]
+    },
+    {
+      "move": "V1:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V1:U"
+      ]
+    },
+    {
+      "move": "V2:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V2:L"
+      ]
+    },
+    {
+      "move": "S3:L",
+      "confidence": 0.19,
+      "probabilities": {
+        "S3:L": 0.59,
+        "S2:L": 0.41
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S2:L",
+        "S3:L"
+      ]
+    },
+    {
+      "move": "S3:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:D"
+      ]
+    },
+    {
+      "move": "H:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "H:D"
+      ]
+    },
+    {
+      "move": "C:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "C:D"
+      ]
+    },
+    {
+      "move": "S4:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:R"
+      ]
+    },
+    {
+      "move": "S4:R",
+      "confidence": 0.12,
+      "probabilities": {
+        "S1:R": 0.44,
+        "S4:R": 0.56
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "S1:R",
+        "S4:R"
+      ]
+    },
+    {
+      "move": "S1:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:R"
+      ]
+    },
+    {
+      "move": "V3:U",
+      "confidence": 0.31,
+      "probabilities": {
+        "V3:U": 0.65,
+        "S1:R": 0.35
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V3:U",
+        "S1:R"
+      ]
+    },
+    {
+      "move": "S1:R",
+      "confidence": 0.2,
+      "probabilities": {
+        "V4:U": 0.4,
+        "S1:R": 0.6
+      },
+      "source": "jev",
+      "candidateCount": 2,
+      "candidates": [
+        "V4:U",
+        "S1:R"
+      ]
+    },
+    {
+      "move": "V1:U",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "V1:U",
+        "V4:U"
+      ]
+    },
+    {
+      "move": "V2:U",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "V2:U",
+        "V4:U"
+      ]
+    },
+    {
+      "move": "V4:U",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "V4:U",
+        "S3:L"
+      ]
+    },
+    {
+      "move": "S3:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:L"
+      ]
+    },
+    {
+      "move": "S2:L",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "S2:L",
+        "S3:L"
+      ]
+    },
+    {
+      "move": "S3:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:L"
+      ]
+    },
+    {
+      "move": "S2:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S2:L"
+      ]
+    },
+    {
+      "move": "H:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "H:D"
+      ]
+    },
+    {
+      "move": "C:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "C:D"
+      ]
+    },
+    {
+      "move": "S1:D",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "S1:D",
+        "S4:D"
+      ]
+    },
+    {
+      "move": "S1:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:R"
+      ]
+    },
+    {
+      "move": "V1:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V1:R"
+      ]
+    },
+    {
+      "move": "V2:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V2:U"
+      ]
+    },
+    {
+      "move": "V2:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V2:U"
+      ]
+    },
+    {
+      "move": "C:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "C:L"
+      ]
+    },
+    {
+      "move": "S1:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:D"
+      ]
+    },
+    {
+      "move": "S1:D",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "S1:D",
+        "S4:D"
+      ]
+    },
+    {
+      "move": "S4:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:D"
+      ]
+    },
+    {
+      "move": "S4:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:D"
+      ]
+    },
+    {
+      "move": "V1:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V1:R"
+      ]
+    },
+    {
+      "move": "V2:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V2:R"
+      ]
+    },
+    {
+      "move": "V3:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V3:R"
+      ]
+    },
+    {
+      "move": "V4:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V4:U"
+      ]
+    },
+    {
+      "move": "V4:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "V4:U"
+      ]
+    },
+    {
+      "move": "C:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "C:L"
+      ]
+    },
+    {
+      "move": "S1:L",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "S1:L",
+        "S4:L"
+      ]
+    },
+    {
+      "move": "S1:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:U"
+      ]
+    },
+    {
+      "move": "H:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "H:U"
+      ]
+    },
+    {
+      "move": "S2:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S2:R"
+      ]
+    },
+    {
+      "move": "S2:R",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "S2:R",
+        "S3:R"
+      ]
+    },
+    {
+      "move": "S3:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:R"
+      ]
+    },
+    {
+      "move": "S3:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:R"
+      ]
+    },
+    {
+      "move": "C:D",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "C:D"
+      ]
+    },
+    {
+      "move": "S1:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S1:L"
+      ]
+    },
+    {
+      "move": "S1:L",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "S1:L",
+        "S4:L"
+      ]
+    },
+    {
+      "move": "S4:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:L"
+      ]
+    },
+    {
+      "move": "S4:L",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S4:L"
+      ]
+    },
+    {
+      "move": "H:U",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "H:U"
+      ]
+    },
+    {
+      "move": "S2:U",
+      "source": "guided",
+      "candidateCount": 2,
+      "candidates": [
+        "S2:U",
+        "S3:U"
+      ]
+    },
+    {
+      "move": "S3:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "S3:R"
+      ]
+    },
+    {
+      "move": "C:R",
+      "source": "forced",
+      "candidateCount": 1,
+      "candidates": [
+        "C:R"
+      ]
+    }
+  ]
+}

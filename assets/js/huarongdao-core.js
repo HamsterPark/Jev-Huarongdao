@@ -1,6 +1,7 @@
 /** Classic 4 × 5 Huarong Dao rules. Coordinates are each piece's top-left cell. */
 export const BOARD_WIDTH = 4;
 export const BOARD_HEIGHT = 5;
+export const TRACE_FORMAT = "jev-huarongdao-trace-v1";
 
 export const PIECES = Object.freeze({
   C: Object.freeze({ width: 2, height: 2, name: "曹操" }),
@@ -150,4 +151,31 @@ export function getStateKey(stateOrPositions) {
   validatePositions(stateOrPositions);
   const positions = positionsOf(stateOrPositions);
   return PIECE_IDS.map((id) => `${id}:${positions[id].join(",")}`).join("|");
+}
+
+/** Validate a complete recorded game and return every position for playback. */
+export function validateSolvedTrace(trace) {
+  if (
+    trace?.format !== TRACE_FORMAT ||
+    !Array.isArray(trace.moves) ||
+    !trace.moves.length
+  ) {
+    throw new Error("棋谱格式无效或没有走法");
+  }
+  if (trace.moves.length > 10000) throw new Error("棋谱过长");
+
+  const states = [createInitialState()];
+  for (const [index, entry] of trace.moves.entries()) {
+    if (!entry || typeof entry.move !== "string") {
+      throw new Error(`第 ${index + 1} 步缺少走法`);
+    }
+    const previous = states.at(-1);
+    if (isSolved(previous)) throw new Error(`第 ${index + 1} 步发生在通关之后`);
+    if (!getLegalMoves(previous).includes(entry.move)) {
+      throw new Error(`第 ${index + 1} 步非法：${entry.move}`);
+    }
+    states.push(applyMove(previous, entry.move));
+  }
+  if (!isSolved(states.at(-1))) throw new Error("棋谱未到达出口");
+  return states;
 }

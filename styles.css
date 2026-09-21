@@ -392,8 +392,7 @@ h1 span {
   font-size: 11px;
   font-weight: 700;
 }
-.select-control,
-.endpoint-row input {
+.select-control {
   min-width: 0;
   width: 100%;
   min-height: 42px;
@@ -405,33 +404,33 @@ h1 span {
   font-size: 12px;
   outline: none;
 }
-.select-control:focus,
-.endpoint-row input:focus {
+.select-control:focus {
   border-color: #d7a970;
 }
-.endpoint-row {
-  display: flex;
-  gap: 7px;
+.record-title {
+  margin-top: 22px;
+  color: #ecf3f2;
+  font-size: 17px;
+  font-weight: 700;
 }
-.endpoint-row input::placeholder {
-  color: #607483;
-}
-.endpoint-row button {
-  flex: 0 0 54px;
-  border: 1px solid #7c6243;
-  border-radius: 5px;
-  background: #4a382a;
-  color: #e9c496;
+.record-description {
+  margin: 9px 0 18px;
+  color: #aabcca;
   font-size: 12px;
+  line-height: 1.7;
 }
-.endpoint-row button:hover {
-  background: #5b452f;
-}
-.field-help {
-  margin: 10px 0 0;
-  color: #879ca8;
+.record-facts {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #304456;
+  padding: 10px 0;
+  color: #92a8b5;
   font-size: 11px;
-  line-height: 1.5;
+}
+.record-facts strong {
+  color: #e3b77c;
+  font-size: 13px;
 }
 
 .log-section {
@@ -481,9 +480,15 @@ h1 span {
   font-size: 10px;
 }
 .move-log li span {
+  flex: 1;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.source-tag {
+  flex: 0 0 auto;
+  color: #b8c8cf;
+  font-size: 10px;
 }
 .move-log .empty-log {
   grid-column: 1 / -1;
