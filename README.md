@@ -8,6 +8,8 @@
 
 `assets/js/huarongdao-race.js` 提供可嵌入桌面应用的实时竞速规则。Jev 控制左侧棋盘、玩家控制右侧棋盘，双方从相同且独立的经典开局出发，玩家先手，严格轮流各移动一个滑块一格。任一方先将曹操移至底部出口就立即获胜。玩家可走任意合法滑动；Jev 的候选由本地最短距离表筛选，每步都将剩余最短距离减少一。这是**路径引导的 Jev 选择**，不是 Jev 完全独立求解。每个 Jev 回合仍会向 Jev API 请求一次选择；API 失败时抛出错误并保持棋局原状，不会用本地走法冒充 Jev。
 
+本次双棋盘竞速模块由 HamsterPark 与 OpenAI Codex（AI 共同作者）协作开发；此署名不改变项目的维护归属。
+
 集成方应在可信的主进程中保管用户本次输入的 API key 与权威比赛状态，key 不落盘。除首次将 key 提交给主进程外，界面在比赛中只发送玩家选择的走法 ID，不传整份可伪造的比赛状态。模块导出 `createRaceState()`、`playRaceMove(race, side, moveId)`、`requestJevMove(race, key)`，以及防御性重放验证 `validateRaceState(race)`。`getShortestPathMoves(board)` 位于 `assets/js/huarongdao-distances.js`；它在第一次使用时计算状态图并缓存。已有的网页仍只是棋谱回放；这个竞速模块供桌面应用使用。
 
 ## 棋谱如何录制
